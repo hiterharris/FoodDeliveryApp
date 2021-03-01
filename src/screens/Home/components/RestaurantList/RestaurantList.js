@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList } from 'react-native';
-import { icons, SIZES, COLORS, FONTS } from '../../constants';
+import { icons, SIZES, COLORS, FONTS } from '../../../../constants';
 
 const RestaurantList = (props) => {
     const { currentLocation, restaurants, categories, navigation } = props;

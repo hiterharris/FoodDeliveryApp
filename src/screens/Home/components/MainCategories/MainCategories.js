@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image, FlatList } from 'react-native';
-import { SIZES, COLORS, FONTS } from '../../constants';
+import { SIZES, COLORS, FONTS } from '../../../../constants';
 
 const MainCategories = (props) => {
     const { categories, selectedCategory, onSelectCategory } = props;

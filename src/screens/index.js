@@ -1,6 +1,6 @@
-import Home from './Home';
-import Restaurant from './Restaurant';
-import OrderDelivery from './OrderDelivery';
+import Home from './Home/Home';
+import Restaurant from './Restaurant/Restaurant';
+import OrderDelivery from './OrderDelivery/OrderDelivery';
 
 export {
     Home,

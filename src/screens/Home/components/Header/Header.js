@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
-import { icons, SIZES, COLORS, FONTS } from '../../constants';
+import { icons, SIZES, COLORS, FONTS } from '../../../../constants';
 
 const Header = (props) => {
     const { currentLocation } = props;

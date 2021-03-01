@@ -1,8 +1,8 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
-import { COLORS } from '../constants';
-import { categoryData, restaurantData, initialCurrentLocation } from '../assets/data';
-import { Header, RestaurantList, MainCategories } from '../components'
+import { COLORS } from '../../constants';
+import { categoryData, restaurantData, initialCurrentLocation } from '../../assets/data';
+import { Header, RestaurantList, MainCategories } from './components'
 
 const Home = ({navigation}) => {
 

@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { isIphoneX } from 'react-native-iphone-x-helper'
 
-import { icons, COLORS, SIZES, FONTS } from '../constants'
+import { icons, COLORS, SIZES, FONTS } from '../../constants'
 
 const Restaurant = ({ route, navigation }) => {
 

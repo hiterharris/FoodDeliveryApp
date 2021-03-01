@@ -8,7 +8,7 @@ import {
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import MapViewDirections from "react-native-maps-directions";
 
-import { COLORS, FONTS, icons, SIZES, GOOGLE_API_KEY } from "../constants"
+import { COLORS, FONTS, icons, SIZES, GOOGLE_API_KEY } from "../../constants"
 
 const OrderDelivery = ({ route, navigation }) => {
 
@@ -138,7 +138,7 @@ const OrderDelivery = ({ route, navigation }) => {
 
         return (
             <View style={{ flex: 1 }}>
-                <MapView
+                {/* <MapView
                     ref={mapView}
                     provider={PROVIDER_GOOGLE}
                     initialRegion={region}
@@ -183,7 +183,7 @@ const OrderDelivery = ({ route, navigation }) => {
                     />
                     {destinationMarker()}
                     {carIcon()}
-                </MapView>
+                </MapView> */}
             </View>
         )
     }
