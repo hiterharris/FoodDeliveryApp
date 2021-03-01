@@ -1,8 +1,10 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
-import { COLORS } from '../../constants';
+import { COLORS, icons } from '../../constants';
 import { categoryData, restaurantData, initialCurrentLocation } from '../../assets/data';
-import { Header, RestaurantList, MainCategories } from './components'
+import { RestaurantList, MainCategories } from './components'
+import { Header } from '../../components';
+
 
 const Home = ({navigation}) => {
 
@@ -21,7 +23,7 @@ const Home = ({navigation}) => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Header currentLocation={currentLocation} />
+            <Header title={currentLocation.streetName} clickHandler={() => console.log('Nearby')} icon={icons.nearby} />
             <MainCategories categories={categories} selectedCategory={selectedCategory} onSelectCategory={onSelectCategory} />
             <RestaurantList currentLocation={currentLocation} restaurants={restaurants} categories={categories} navigation={navigation} />
         </SafeAreaView>
