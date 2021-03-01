@@ -1,17 +1,9 @@
 import React from 'react';
-import { SafeAreaView,View, Text, StyleSheet, TouchableOpacity, Image, FlatList } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList } from 'react-native';
 import { icons, SIZES, COLORS, FONTS } from '../../constants';
-import { categoryData, restaurantData } from '../../assets/data';
-
 
 const RestaurantList = (props) => {
-    const { initialCurrentLocation, restaurants } = props;
-
-    const [categories, setCategories] = React.useState(categoryData)
-    const [selectedCategory, setSelectedCategory] = React.useState(null)
-    // const [restaurants, setRestaurants] = React.useState(restaurantData)
-    const [currentLocation, setCurrentLocation] = React.useState(initialCurrentLocation)
-
+    const { currentLocation, restaurants, categories } = props;
 
     function getCategoryNameById(id) {
         let category = categories.filter(a => a.id == id)

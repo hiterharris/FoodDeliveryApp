@@ -1,41 +1,21 @@
 import React from 'react';
-import { View } from 'react-native';
-import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom-tabs';
-import { COLORS } from '../constants';
-import { isIphoneX } from 'react-native-iphone-x-helper';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { tabProps } from './tabProps';
 
 const Tab = createBottomTabNavigator()
-
-const CustomTabBar = (props) => {
-    if (isIphoneX()) {
-        return (
-            <View>
-                <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 30, backgroundColor: COLORS.white}}>
-
-                </View>
-                <BottomTabBar {...props.props} />
-            </View>
-        )
-    } else {
-        <BottomTabBar {...props.props} />
-    }
-}
 
 const Tabs = () => {
     return (
         <Tab.Navigator
             tabBarOptions={{
                 showLabel: false,
-                style: { borderTopWidth: 0, backgroundColor: 'transparent' }
+                style: { borderTopWidth: 0 }
             }}
-            tabBar={(props) => (
-                <CustomTabBar props={props}/>
-            )}
         >
-            {tabProps.map(tab => {
+            {tabProps.map((tab, index) => {
                 return (
                 <Tab.Screen
+                    key={index}
                     name={tab.name}
                     component={tab.component}
                     options={tab.options}

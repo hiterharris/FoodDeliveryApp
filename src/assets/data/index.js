@@ -1,4 +1,5 @@
 import { categoryData } from './categoryData';
-import { restaurantData } from './restaurantData'
+import { restaurantData } from './restaurantData';
+import { initialCurrentLocation } from './initialCurrentLocation';
 
-export { categoryData, restaurantData }
+export { categoryData, restaurantData, initialCurrentLocation }
