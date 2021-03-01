@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Image, FlatList } from 'react
 import { icons, SIZES, COLORS, FONTS } from '../../constants';
 
 const RestaurantList = (props) => {
-    const { currentLocation, restaurants, categories } = props;
+    const { currentLocation, restaurants, categories, navigation } = props;
 
     function getCategoryNameById(id) {
         let category = categories.filter(a => a.id == id)

@@ -4,7 +4,7 @@ import { COLORS } from '../constants';
 import { categoryData, restaurantData, initialCurrentLocation } from '../assets/data';
 import { Header, RestaurantList, MainCategories } from '../components'
 
-const Home = () => {
+const Home = ({navigation}) => {
 
     const [categories, setCategories] = React.useState(categoryData)
     const [selectedCategory, setSelectedCategory] = React.useState(null)
@@ -23,7 +23,7 @@ const Home = () => {
         <SafeAreaView style={styles.container}>
             <MainCategories categories={categories} selectedCategory={selectedCategory} onSelectCategory={onSelectCategory} />
             <Header currentLocation={currentLocation} />
-            <RestaurantList currentLocation={currentLocation} restaurants={restaurants} categories={categories} />
+            <RestaurantList currentLocation={currentLocation} restaurants={restaurants} categories={categories} navigation={navigation} />
         </SafeAreaView>
     )
 }

@@ -1,5 +1,5 @@
 import Home from './Home';
-import Restaurant from './Restaurant/Restaurant';
+import Restaurant from './Restaurant';
 import OrderDelivery from './OrderDelivery';
 
 export {
