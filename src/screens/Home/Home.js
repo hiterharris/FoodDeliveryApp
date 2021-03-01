@@ -21,8 +21,8 @@ const Home = ({navigation}) => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <MainCategories categories={categories} selectedCategory={selectedCategory} onSelectCategory={onSelectCategory} />
             <Header currentLocation={currentLocation} />
+            <MainCategories categories={categories} selectedCategory={selectedCategory} onSelectCategory={onSelectCategory} />
             <RestaurantList currentLocation={currentLocation} restaurants={restaurants} categories={categories} navigation={navigation} />
         </SafeAreaView>
     )
