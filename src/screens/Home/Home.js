@@ -23,7 +23,7 @@ const Home = ({navigation}) => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Header title={currentLocation.streetName} clickHandler={() => console.log('Nearby')} icon={icons.nearby} />
+            <Header title={currentLocation.streetName} clickHandler={() => navigation.navigate("Cart")} icon={icons.nearby} />
             <MainCategories categories={categories} selectedCategory={selectedCategory} onSelectCategory={onSelectCategory} />
             <RestaurantList currentLocation={currentLocation} restaurants={restaurants} categories={categories} navigation={navigation} />
         </SafeAreaView>

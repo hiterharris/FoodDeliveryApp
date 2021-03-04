@@ -203,9 +203,7 @@ const Restaurant = ({ route, navigation }) => {
 
     return (
         <SafeAreaView style={styles.container}>
-            {/* {renderHeader()} */}
-            <Header title={restaurant?.name} clickHandler={goBack} icon={icons.back} />
-            {/* {renderFoodInfo()} */}
+            <Header title={restaurant?.name} goBack={goBack} clickHandler={() => navigation.navigate("Cart")} icon={icons.back} />
             <FoodInfo restaurant={restaurant} orderItems={orderItems} setOrderItems={setOrderItems} />
             {renderOrder()}
         </SafeAreaView>
