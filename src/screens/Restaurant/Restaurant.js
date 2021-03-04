@@ -19,6 +19,7 @@ const Restaurant = ({ route, navigation }) => {
     const [restaurant, setRestaurant] = React.useState(null);
     const [currentLocation, setCurrentLocation] = React.useState(null);
     const [orderItems, setOrderItems] = React.useState([]);
+    const [cart, setCart] = React.useState([]);
 
     React.useEffect(() => {
         let { item, currentLocation } = route.params;
@@ -174,10 +175,11 @@ const Restaurant = ({ route, navigation }) => {
                                 alignItems: 'center',
                                 borderRadius: SIZES.radius
                             }}
-                            onPress={() => navigation.navigate("OrderDelivery", {
-                                restaurant: restaurant,
-                                currentLocation: currentLocation
-                            })}
+                            // onPress={() => navigation.navigate("OrderDelivery", {
+                            //     restaurant: restaurant,
+                            //     currentLocation: currentLocation
+                            // })}
+                            onPress={() => setCart(restaurant.menu[0])}
                         >
                             <Text style={{ color: COLORS.white, ...FONTS.h2 }}>Order</Text>
                         </TouchableOpacity>
@@ -203,7 +205,7 @@ const Restaurant = ({ route, navigation }) => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Header title={restaurant?.name} goBack={goBack} clickHandler={() => navigation.navigate("Cart")} icon={icons.back} />
+            <Header title={restaurant?.name} goBack={goBack} clickHandler={() => navigation.navigate("Cart", {cart: cart})} icon={icons.back} />
             <FoodInfo restaurant={restaurant} orderItems={orderItems} setOrderItems={setOrderItems} />
             {renderOrder()}
         </SafeAreaView>
