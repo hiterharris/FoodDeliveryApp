@@ -5,8 +5,7 @@ import { categoryData, restaurantData, initialCurrentLocation } from '../../asse
 import { RestaurantList, MainCategories } from './components'
 import { Header } from '../../components';
 
-
-const Home = ({navigation}) => {
+const Home = ({ navigation }) => {
 
     const [categories, setCategories] = React.useState(categoryData)
     const [selectedCategory, setSelectedCategory] = React.useState(null)
@@ -23,7 +22,7 @@ const Home = ({navigation}) => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Header title={currentLocation.streetName} clickHandler={() => navigation.navigate("Cart")} icon={icons.nearby} />
+            <Header title={currentLocation.streetName} clickHandlerLeft={() => navigation.navigate("Map")} clickHandlerRight={() => navigation.navigate("Cart", {cart: []})} iconLeft={icons.nearby} iconRight={icons.basket} />
             <MainCategories categories={categories} selectedCategory={selectedCategory} onSelectCategory={onSelectCategory} />
             <RestaurantList currentLocation={currentLocation} restaurants={restaurants} categories={categories} navigation={navigation} />
         </SafeAreaView>

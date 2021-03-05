@@ -3,12 +3,12 @@ import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { icons, SIZES, COLORS, FONTS } from '../../constants';
 
 const Header = (props) => {
-    const { title, goBack, clickHandler, icon } = props;
+    const { title, clickHandlerLeft, clickHandlerRight, iconLeft, iconRight } = props;
     return (
         <View style={{ flexDirection: 'row', height: 50 }}>
-            <TouchableOpacity style={{ width: 50, paddingLeft: SIZES.padding * 2, justifyContent: 'center' }} onPress={() => goBack()}>
+            <TouchableOpacity style={{ width: 50, paddingLeft: SIZES.padding * 2, justifyContent: 'center' }} onPress={clickHandlerLeft}>
                 <Image
-                    source={icon}
+                    source={iconLeft}
                     resizeMode='contain'
                     style={{ width: 30, height: 30 }}
                 />
@@ -18,9 +18,9 @@ const Header = (props) => {
                     <Text style={{ ...FONTS.h3 }}>{title}</Text>
                 </View>
             </View>
-            <TouchableOpacity style={{ width: 50, paddingRight: SIZES.padding, justifyContent: 'center' }} onPress={clickHandler}>
+            <TouchableOpacity style={{ width: 50, paddingRight: SIZES.padding, justifyContent: 'center' }} onPress={clickHandlerRight}>
                 <Image
-                    source={icons.basket}
+                    source={iconRight}
                     resizeMode='contain'
                     style={{ height: 30, width: 30 }}
                 />

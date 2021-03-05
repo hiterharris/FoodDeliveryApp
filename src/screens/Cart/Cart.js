@@ -8,17 +8,22 @@ const Cart = ({ route, navigation }) => {
 
     const { cart } = route.params;
 
+    const cartItems = cart.length > 0 ? cart : []
+
+    console.log(cartItems)
+
     const goBack = () => {
         navigation.goBack()
     }
 
     return (
         <SafeAreaView style={styles.container}>
-            <Header title={'Cart'} goBack={goBack} icon={icons.back} />
+            <Header title={'Cart'} clickHandlerLeft={goBack} iconLeft={icons.back} />
+                
                 <View>
-                    <Text>{cart.name}</Text>
+                    <Text>{cart?.name}</Text>
                     <Image
-                        source={cart.photo}
+                        source={cart?.photo}
                         resizeMode="contain"
                         style={{
                             width: 100,
