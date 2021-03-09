@@ -14,7 +14,6 @@ import { Header } from '../../components';
 import { FoodInfo } from './components';
 
 const Restaurant = ({ route, navigation }) => {
-
     const scrollX = new Animated.Value(0);
     const [restaurant, setRestaurant] = React.useState(null);
     const [currentLocation, setCurrentLocation] = React.useState(null);
@@ -201,6 +200,10 @@ const Restaurant = ({ route, navigation }) => {
             </View>
         )
     }
+
+    React.useEffect(() => {
+        console.log(orderItems)
+    }, [orderItems])
 
     return (
         <SafeAreaView style={styles.container}>
