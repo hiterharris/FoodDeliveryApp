@@ -12,8 +12,11 @@ import { isIphoneX } from 'react-native-iphone-x-helper'
 import { icons, COLORS, SIZES, FONTS } from '../../constants'
 import { Header } from '../../components';
 import { FoodInfo } from './components';
+import {useDispatch} from 'react-redux';
+import { addItem } from '../../state/cartActions';
 
 const Restaurant = ({ route, navigation }) => {
+    const dispatch = useDispatch();
     const scrollX = new Animated.Value(0);
     const [restaurant, setRestaurant] = React.useState(null);
     const [currentLocation, setCurrentLocation] = React.useState(null);
@@ -203,7 +206,11 @@ const Restaurant = ({ route, navigation }) => {
 
     React.useEffect(() => {
         console.log(orderItems)
+        setCart([orderItems])
+        dispatch(addItem(cart))
     }, [orderItems])
+
+    console.log('cart:', cart)
 
     return (
         <SafeAreaView style={styles.container}>

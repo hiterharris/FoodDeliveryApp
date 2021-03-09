@@ -15,9 +15,8 @@ const Cart = ({ route, navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
             <Header title={'Cart'} clickHandlerLeft={goBack} iconLeft={icons.back} />
-                
                 <View>
-                    <Text>{cart[0]?.name}</Text>
+                    <Text>{cart[0][0]?.name}</Text>
                 </View>
 
                 <View
