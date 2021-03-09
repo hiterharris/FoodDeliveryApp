@@ -7,18 +7,18 @@ import { initialCurrentLocation } from '../../assets/data';
 
 const Map = ({ navigation }) => {
 
-    const goBack = () => {
-        navigation.goBack()
-    }
-
     return (
         <View style={styles.container}>
-            <Header title={initialCurrentLocation.streetName} clickHandlerLeft={goBack} clickHandlerRight={() => navigation.navigate("Cart", {cart: []})} iconLeft={icons.back} />
+            <Header
+                title={initialCurrentLocation.streetName}
+                clickHandlerLeft={() => navigation.goBack()}
+                clickHandlerRight={() => navigation.navigate("Cart", {cart: []})}
+                iconLeft={icons.back} />
             <MapView
                 style={styles.map}
                 initialRegion={{
-                    latitude: 37.78825,
-                    longitude: -122.4324,
+                    latitude: 35.227085,
+                    longitude: -80.843124,
                     latitudeDelta: 0.0922,
                     longitudeDelta: 0.0421,
                 }}

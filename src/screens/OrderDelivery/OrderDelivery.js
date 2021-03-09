@@ -7,6 +7,9 @@ import {
 } from "react-native";
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import MapViewDirections from "react-native-maps-directions";
+import Map from '../Map/Map';
+import { categoryData, restaurantData, initialCurrentLocation } from '../../assets/data';
+
 
 import { COLORS, FONTS, icons, SIZES, GOOGLE_API_KEY } from "../../constants"
 
@@ -25,7 +28,8 @@ const OrderDelivery = ({ route, navigation }) => {
     const [angle, setAngle] = React.useState(0)
 
     React.useEffect(() => {
-        let { restaurant, currentLocation } = route.params;
+        let restaurant = restaurantData[0];
+        let currentLocation = initialCurrentLocation;
 
         let fromLoc = currentLocation.gps
         let toLoc = restaurant.location
@@ -138,6 +142,7 @@ const OrderDelivery = ({ route, navigation }) => {
 
         return (
             <View style={{ flex: 1 }}>
+                <Map />
                 {/* <MapView
                     ref={mapView}
                     provider={PROVIDER_GOOGLE}

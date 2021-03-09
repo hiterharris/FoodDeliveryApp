@@ -14,12 +14,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerShown: false
-          }}
-          initialRouteName={'Login'}
-        >
+        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={'Login'}>
           <Stack.Screen name='Home' component={Tabs}/>
           <Stack.Screen name='Restaurant' component={Restaurant}/>
           <Stack.Screen name='OrderDelivery' component={OrderDelivery}/>
