@@ -2,15 +2,11 @@ import React from 'react';
 import { SafeAreaView, View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { SIZES, COLORS, FONTS, icons } from '../../constants';
 import { Header } from '../../components';
-
+import { useSelector } from 'react-redux';
 
 const Cart = ({ route, navigation }) => {
-
-    const { cart } = route.params;
-
-    const cartItems = cart.length > 0 ? cart : []
-
-    console.log(cartItems)
+    
+    const cart = useSelector(state => state.cartReducer.cart)
 
     const goBack = () => {
         navigation.goBack()
@@ -21,16 +17,9 @@ const Cart = ({ route, navigation }) => {
             <Header title={'Cart'} clickHandlerLeft={goBack} iconLeft={icons.back} />
                 
                 <View>
-                    <Text>{cart?.name}</Text>
-                    <Image
-                        source={cart?.photo}
-                        resizeMode="contain"
-                        style={{
-                            width: 100,
-                            height: 100,
-                        }}
-                    />
+                    <Text>{cart[0]?.name}</Text>
                 </View>
+
                 <View
                     style={{
                         flex: 1,
