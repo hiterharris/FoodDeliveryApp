@@ -15,10 +15,15 @@ const Cart = ({ route, navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
             <Header title={'Cart'} clickHandlerLeft={goBack} iconLeft={icons.back} />
-                
-                <View>
-                    <Text>{cart[0]?.name}</Text>
-                </View>
+
+                {cart.map((item, index) => {
+                    return (
+                    <View key={index}>
+                        <Text>{item.name}</Text>
+                    </View>
+                    ); 
+                })}
+
 
                 <View
                     style={{
@@ -35,10 +40,7 @@ const Cart = ({ route, navigation }) => {
                             alignItems: 'center',
                             borderRadius: SIZES.radius,
                         }}
-                        onPress={() => navigation.navigate("OrderDelivery", {
-                            restaurant: restaurant,
-                            currentLocation: currentLocation
-                        })}
+                        onPress={() => navigation.navigate("OrderDelivery")}
                     >
                         <Text style={{ color: COLORS.white, ...FONTS.h2 }}>Order</Text>
                     </TouchableOpacity>

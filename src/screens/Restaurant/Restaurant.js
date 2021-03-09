@@ -12,9 +12,11 @@ import { isIphoneX } from 'react-native-iphone-x-helper'
 import { icons, COLORS, SIZES, FONTS } from '../../constants'
 import { Header } from '../../components';
 import { FoodInfo } from './components';
+import {useDispatch} from 'react-redux';
+import {addItem} from '../../state/cartActions';
 
 const Restaurant = ({ route, navigation }) => {
-
+    const dispatch = useDispatch();
     const scrollX = new Animated.Value(0);
     const [restaurant, setRestaurant] = React.useState(null);
     const [currentLocation, setCurrentLocation] = React.useState(null);
@@ -175,12 +177,12 @@ const Restaurant = ({ route, navigation }) => {
                                 alignItems: 'center',
                                 borderRadius: SIZES.radius
                             }}
-                            onPress={() => navigation.navigate("OrderDelivery", {
-                                restaurant: restaurant,
-                                currentLocation: currentLocation
-                            })}
+                            // onPress={() => navigation.navigate("OrderDelivery", {
+                            //     restaurant: restaurant,
+                            //     currentLocation: currentLocation
+                            // })}
                         >
-                            <Text style={{ color: COLORS.white, ...FONTS.h2 }}>Order</Text>
+                            <Text style={{ color: COLORS.white, ...FONTS.h2 }}>Add to Cart</Text>
                         </TouchableOpacity>
                     </View>
                 </View>

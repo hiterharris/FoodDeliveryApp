@@ -22,9 +22,24 @@ const Home = ({ navigation }) => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Header title={currentLocation.streetName} clickHandlerLeft={() => navigation.navigate("Map")} clickHandlerRight={() => navigation.navigate("Cart", {cart: []})} iconLeft={icons.nearby} iconRight={icons.basket} />
-            <MainCategories categories={categories} selectedCategory={selectedCategory} onSelectCategory={onSelectCategory} />
-            <RestaurantList currentLocation={currentLocation} restaurants={restaurants} categories={categories} navigation={navigation} />
+            <Header
+                title={currentLocation.streetName}
+                clickHandlerLeft={() => navigation.navigate("Map")}
+                clickHandlerRight={() => navigation.navigate("Cart", {cart: []})}
+                iconLeft={icons.nearby}
+                iconRight={icons.basket}
+            />
+            <MainCategories
+                categories={categories}
+                selectedCategory={selectedCategory}
+                onSelectCategory={onSelectCategory}
+            />
+            <RestaurantList
+                currentLocation={currentLocation}
+                restaurants={restaurants}
+                categories={categories}
+                navigation={navigation}
+            />
         </SafeAreaView>
     )
 }
