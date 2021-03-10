@@ -2,14 +2,14 @@ import { combineReducers } from 'redux';
 
 const INITIAL_STATE = {
     cart: [
-        {
-            id: 1,
-            name: "Crispy Chicken Burger",
-            photo: '',
-            description: "Burger with crispy chicken, cheese and lettuce",
-            calories: 200,
-            price: 10
-        },
+        // {
+        //     id: 1,
+        //     name: "Crispy Chicken Burger",
+        //     photo: '',
+        //     description: "Burger with crispy chicken, cheese and lettuce",
+        //     calories: 200,
+        //     price: 10
+        // },
     ]
   };
 

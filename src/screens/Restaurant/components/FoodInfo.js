@@ -13,7 +13,7 @@ const FoodInfo = (props) => {
     const { restaurant, orderItems, setOrderItems } = props;
     const scrollX = new Animated.Value(0);
 
-    const editOrder = (action, name, menuId, price) => {
+    const editOrder = (action, name, photo, menuId, price) => {
         let orderList = orderItems.slice()
         let item = orderList.filter(a => a.menuId == menuId)
 
@@ -26,6 +26,7 @@ const FoodInfo = (props) => {
                 const newItem = {
                     menuId: menuId,
                     name: name,
+                    photo: photo,
                     qty: 1,
                     price: price,
                     total: price
@@ -95,7 +96,7 @@ const FoodInfo = (props) => {
                                         borderTopLeftRadius: 25,
                                         borderBottomLeftRadius: 25
                                     }}
-                                    onPress={() => editOrder("-", item.name, item.menuId, item.price)}
+                                    onPress={() => editOrder("-", item.name, item.photo, item.menuId, item.price)}
                                 >
                                     <Text style={{ ...FONTS.body1 }}>-</Text>
                                 </TouchableOpacity>
@@ -120,7 +121,7 @@ const FoodInfo = (props) => {
                                         borderTopRightRadius: 25,
                                         borderBottomRightRadius: 25
                                     }}
-                                    onPress={() => editOrder("+", item.name, item.menuId, item.price)}
+                                    onPress={() => editOrder("+", item.name, item.photo, item.menuId, item.price)}
                                 >
                                     <Text style={{ ...FONTS.body1 }}>+</Text>
                                 </TouchableOpacity>

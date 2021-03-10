@@ -177,10 +177,7 @@ const Restaurant = ({ route, navigation }) => {
                                 alignItems: 'center',
                                 borderRadius: SIZES.radius
                             }}
-                            // onPress={() => navigation.navigate("OrderDelivery", {
-                            //     restaurant: restaurant,
-                            //     currentLocation: currentLocation
-                            // })}
+                            onPress={() => {dispatch(addItem(cart)), navigation.goBack()}}
                         >
                             <Text style={{ color: COLORS.white, ...FONTS.h2 }}>Add to Cart</Text>
                         </TouchableOpacity>
@@ -205,12 +202,8 @@ const Restaurant = ({ route, navigation }) => {
     }
 
     React.useEffect(() => {
-        console.log(orderItems)
-        setCart([orderItems])
-        dispatch(addItem(cart))
+        setCart([...orderItems])
     }, [orderItems])
-
-    console.log('cart:', cart)
 
     return (
         <SafeAreaView style={styles.container}>
